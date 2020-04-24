@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Number {
+    float value = 1;
+}
+
+message Messages {
+    string word = 1;
+}
+
+service Calculator {
+    rpc SquareRoot(Number) returns (Number) {};
+    rpc ListNumbers(Number) returns (stream Number) {};
+    rpc ReverseWord(stream Messages) returns (stream Messages) {};
+}
